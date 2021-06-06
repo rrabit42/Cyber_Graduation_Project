@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django_filters',
 
+    'accounts',
+    'board',
+    'manager',
 ]
 
 MIDDLEWARE = [
