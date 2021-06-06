@@ -1,0 +1,27 @@
+.idea
+**/migrations/000*.py
+__pycache__/
+db.sqlite3
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3-journal
+
+# Environments
+.env
+.env.sh
+.env.bat
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+virtual/
+
+# Celery stuff
+*/celerybeat-schedule.*
+*/celerybeat.pid
+
+*/UserData
