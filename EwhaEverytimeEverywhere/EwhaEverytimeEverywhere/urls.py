@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('', TemplateView.as_view(template_name='index.html'), name='root'),
     path('accounts/', include('accounts.urls')),
-    path('blog/', include('board.urls')),
+    path('board/', include('board.urls')),
     path('main/', include('manager.urls')),
 
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
