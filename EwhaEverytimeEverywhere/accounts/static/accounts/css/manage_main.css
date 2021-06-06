@@ -1,0 +1,218 @@
+/*모든 css파일에 다 붙여야 함*/
+.footer {
+    margin: auto 0 0;
+    padding-top: 13px;
+    height: 56px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { display: none; }
+
+h1 {
+    color: black !important;
+    font-size: 100px;
+    text-align: center;
+    padding: 30px;
+}
+/*여기까지*/
+
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+     font-family: 'NIXGONM-Vb';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+h4 {
+    font-family: 'SDSamliphopangche_Basic';
+    font-size: 40px;
+    color: rgba(0,123,255,0.5);
+    text-align: center;
+    margin: 0px auto;
+}
+
+con {
+    font-family: 'NIXGONM-Vb';
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#filter {
+    background-color: rgba(0,123,255,0.1);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+fTitle {
+    font-size: 20px;
+    width:auto;
+    margin-top: 4px;
+}
+#id_date_year {
+    width:100px;
+}
+#id_date_month {
+    width: 80px;
+    margin-left: 5px;
+}
+#id_date_day {
+    width: 80px;
+    margin-left: 5px;
+}
+#dataCon {
+    display: flex;
+    text-align: left;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    height: 37px;
+}
+OCon {
+    display: flex;
+}
+.form-group-1 {
+    /*margin: 5px 40px 5px 40px;*/
+    margin: 0px 40px 0px 40px;
+    position: relative;
+    padding: 5px 0px 5px 10px;
+    height: 48px;
+}
+.form-group-1:hover {
+    background-color: rgba(0,123,255,0.2);
+}
+input[class="form-controld"] {
+    border: none;
+    outline: none; !important;
+    background-color: rgba(255,255,255,0.5);
+    text-align: right;
+}
+input[class="form-controld"]:focus {
+    border: none;
+    outline: none; !important;
+    background-color: rgba(255,255,255,1);
+    text-align: right;
+}
+input[name="time_after"] {
+    width: 110px;
+    margin-right: 20px;
+}
+input[name="time_before"] {
+    width: 110px;
+    margin-left: 20px;
+}
+input[name="user"] {
+    width: 250px;
+}
+input[name="label"] {
+    width: 250px;
+}
+select[class="form-controld"] {
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+}
+select[id="id_type"] {
+    width: 110px;
+}
+#button {
+    /*margin-left: 30px;*/
+    font-family: 'SDSamliphopangche_Basic';
+    font-size: 24px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    background-color: rgba(0,123,255,0.5);
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    right: 100px;
+}
+#button:focus {
+    background-color: rgba(0,123,255,1);
+    border: none;
+    outline: none;
+}
+
+#conbutton {
+    font-family: 'SDSamliphopangche_Basic';
+    border: none;
+    background-color: rgba(0,123,255,0.5);
+    color: white;
+    border-radius: 4px;
+}
+#conbutton:focus {
+    background-color: rgba(0,123,255,1);
+    border: none;
+    outline: none;
+}
+
+HeaderCon {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#result {
+    background-color: rgba(0,123,255,0.1);
+    padding: 0px;
+    margin-bottom: 100px;
+}
+
+#resultT {
+    font-size: 15px;
+    border: none;
+}
+
+th[class="text-center"] {
+    border: none;
+}
+
+#emptyc {
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    height: 63px;
+}
+
+input[type="datetime-local"] {
+    width: 250px;
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+    font-size: 15px;
+}
+
+input[id="id_time_0"] {
+    margin-right: 5px;
+}
+
+input[id="id_time_1"] {
+    margin-left: 5px;
+}
+
+div[class="modal-dialog mt-5"] {
+    /*font-family: 'NIXGONM-Vb';*/
+}
+
+#yes .text-center {
+    border: none;
+    vertical-align: middle;
+}

@@ -1,0 +1,41 @@
+{#{% extends "accounts/base.html" %}#}
+{##}
+{#{% load i18n %}#}
+{##}
+{#{% load static %}#}
+{##}
+{#{%  block stylesheets %}#}
+    {#모달때문에 있어야 함#}
+{#    <!-- Bootstrap CSS -->#}
+{#    <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.modal.css' %}">#}
+{#    <!-- Font awesome CSS -->#}
+{#    <link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">#}
+{##}
+    {#이거!!!!!!!!가장 아래에 위치하도록!!!!#}
+{#    <link rel="stylesheet" href="{% static 'accounts/css/activate_complete.css' %}">#}
+{#{% endblock stylesheets %}#}
+{##}
+{#{% block title %}{{ title }}{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <container class="container">#}
+{#        <div class="spacer_30">&nbsp;</div>#}
+{#        <div class="spacer_90 hidden-sm hidden-xs">&nbsp;</div>#}
+{#        <div class="row">#}
+{#            <div class="col-md-8 col-md-offset-2">#}
+{#                <div class="panel panel-default">#}
+{#                    <div class="panel-body">#}
+{##}
+{#                        <h2>계정이 활성화 되었습니다!</h2>#}
+{#                        <h2>이제 로그인을 통해 EEE 사이트를 이용하실 수 있습니다!</h2>#}
+{##}
+{#                        <ButtonCon>#}
+{#                            <a id="button" class="btn btn-success" href="{% url 'login' %}">{% trans 'Log in' %}</a>#}
+{#                        </ButtonCon>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </container>#}
+{#{% endblock %}#}

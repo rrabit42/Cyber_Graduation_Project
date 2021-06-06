@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    {% block stylesheets %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.modal.css' %}">
+        <!-- Font awesome CSS -->
+        <link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">
+
+        <!-- Custom CSS -->
+        <style media="screen">
+
+            {#이건 뭐지?#}
+            .invalid {
+              color: #dc3545;
+              font-size: 80%;
+            }
+
+            {#전체화면이 높이#}
+            body {
+              display: flex;
+              flex-direction: column;
+              min-height: 100vh;
+            }
+
+            {#전체 화면의 footer#}
+            {#이거 높이가 내용 바로 아래부터 끝까지임#}
+            .footer {
+                margin: auto 0 0;
+                padding-top: 13px;
+                height: 56px;
+                text-align: center;
+                border-top: 1px solid #eee;
+            }
+
+        </style>
+    {% endblock stylesheets %}
+
+        <title>EEE Cert</title>
+    </head>
+
+    <body>
+        <!-- Includes -->
+        {#헤더임#}
+        {% include "_header.html" %}
+
+        {% block content %}
+        {% endblock content %}
+
+        <!-- Includes -->
+        {#푸터임#}
+        {% include "_footer.html" %}
+
+        <!-- JavaScript -->
+        {% block scripts %}
+          <script src="{% static 'accounts/js/jquery-3.2.1.min.js' %}"></script>
+          <script src="{% static 'accounts/js/popper.min.js' %}"></script>
+          <script src="{% static 'accounts/js/bootstrap.modal.js' %}"></script>
+          <!-- You can alternatively load the minified version -->
+          <script src="{% static 'accounts/js/jquery.bootstrap.modal.forms.js' %}"></script>
+        {% endblock scripts %}
+        <script>
+            {% if messages %}
+                {% for message in messages %}
+                    alert("{{message}}");
+                {% endfor %}
+            {% endif %}
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                // async로 하면 좋겠지만..
+                // Create key synchronous
+                function createKeyModalForm() {
+                    {#console.log("jebal");#}
+                $("#create-key").modalForm({
+                    formURL: "{% url 'create_key' %}",
+                    modalID: "#create-modal"
+                });
+                }
+                createKeyModalForm();
+
+                // Create token synchronous
+                function createTokenModalForm() {
+                    {#console.log("jebal");#}
+                    $("#create-token").modalForm({
+                        formURL: "{% url 'create_token' %}",
+                        modalID: "#create-modal"
+                    });
+                }
+                createTokenModalForm();
+
+        });
+        </script>
+
+        <style type="text/css">
+            h1 {
+                color: black;
+            }
+        </style>
+        {% block extrascripts %}{% endblock extrascripts %}
+
+    </body>
+
+</html>

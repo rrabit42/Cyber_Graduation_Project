@@ -1,0 +1,32 @@
+{% extends "accounts/base.html" %}
+
+{% load static %}
+
+{%  block stylesheets %}
+    {#모달때문에 있어야 함#}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.modal.css' %}">
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">
+
+    {#이거!!!!!!!!가장 아래에 위치하도록!!!!#}
+    <link rel="stylesheet" href="{% static 'accounts/css/main.css' %}">
+{% endblock stylesheets %}
+
+{% block content %}
+
+    <con>
+        <h2>사이버보안종합설계프로젝트</h2>
+        <h2>어몽어스 팀 시연</h2>
+        <h2 id="name">사이버보안전공 김서영, 정경화, 황유나</h2>
+        <h2>
+            <img id="k" src="https://raw.githubusercontent.com/rrabit42/Ewha-Everytime-Everywhere/main/web/practice/templates/s.png?token=ANZQO2L4VTPJN5MCWRXMRJTAXMMEQ" alt="">
+            <img id="j" src="https://raw.githubusercontent.com/rrabit42/Ewha-Everytime-Everywhere/main/web/practice/templates/j.png?token=ANZQO2OLPWKTWP6OIFVIHI3AXMMAA" alt="">
+            <img id="h" src="https://raw.githubusercontent.com/rrabit42/Ewha-Everytime-Everywhere/main/web/practice/templates/y.png?token=ANZQO2NFXHVHOXXFC7X3GA3AXMMH2" alt="">
+        </h2>
+        <br>
+        <br>
+        <br>
+    </con>
+
+{% endblock content %}

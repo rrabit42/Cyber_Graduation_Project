@@ -1,0 +1,69 @@
+/*모든 css파일에 다 붙여야 함*/
+.footer {
+    margin: auto 0 0;
+    padding-top: 13px;
+    height: 56px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { display: none; }
+
+h1 {
+    color: black !important;
+    font-size: 100px;
+    text-align: center;
+    padding: 30px;
+}
+/*여기까지*/
+
+
+/*여기서부터 각각의 css마다 다르게 해주면 됨*/
+container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 100px 50px 100px;
+}
+h2 {
+    color: black;
+    font-size: 50px;
+    margin: 0 0 50px 0;
+}
+div {
+    display: flex;
+}
+h3 {
+    color: gray;
+    width: 100px;
+}
+h3c {
+    color: gray;
+    font-size: 20px;
+    padding-top: 5px;
+}
+p_menu {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    padding-top: 60px;
+    font-size: 20px;
+    height: 100px;
+    /*background-color: red;*/
+}
+.p_edit {
+    width: 150px;
+    /*background-color: blue;*/
+    text-align: left;
+}
+.p_change {
+    position: absolute;
+    right: 100px;
+    width: 150px;
+    /*background-color: blue;*/
+}

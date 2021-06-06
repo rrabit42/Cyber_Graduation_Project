@@ -1,0 +1,48 @@
+{% extends "accounts/base.html" %}
+
+{% load static %}
+
+{%  block stylesheets  %}
+    {#모달때문에 있어야 함#}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.modal.css' %}">
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">
+
+    {#이거!!!!!!!!가장 아래에 위치하도록!!!!#}
+    <link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}">
+{% endblock stylesheets %}
+
+{% block content %}
+    <profileCon>
+
+        <hCon>
+            <h2_b>{{ user }}</h2_b>
+            <h2>님, 환영합니다!</h2>
+        </hCon>
+
+        <profileLine>
+            <h33>이름</h33>
+            <h3c>
+                {{ user.last_name|default:"&dash;" }} {{ user.first_name|default:"&dash;" }}
+            </h3c>
+        </profileLine>
+        <profileLine>
+            <h33>이메일</h33>
+            <h3c>
+                {{ user.email|default:"&dash;" }}
+            </h3c>
+        </profileLine>
+        <profileLine>
+            <h33>Info</h33>
+            <h3c>
+                {{ user.profile.info|default:"자기소개가 없습니다." }}
+            </h3c>
+        </profileLine>
+    </profileCon>
+
+    <menuCon>
+        <a id="p_edit" href="{% url "profile_edit" %}"><p>프로필 수정</p></a>
+        <a id="p_change" href="{% url "password_reset" %}"><p>암호 리셋하기</p></a>
+    </menuCon>
+{% endblock content %}

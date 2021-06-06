@@ -1,0 +1,117 @@
+{% extends "accounts/base.html" %}
+
+{% load static %}
+
+{%  block stylesheets %}
+    {#모달때문에 있어야 함#}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.modal.css' %}">
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">
+
+    {#이거!!!!!!!!가장 아래에 위치하도록!!!!#}
+    <link rel="stylesheet" href="{% static 'accounts/css/signup.css' %}">
+{% endblock stylesheets %}
+
+{% block content %}
+
+    <container>
+        <h2>회원가입</h2>
+            <formCon>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <table>
+{#                        {{ form.as_table }}#}
+                        <tableLine>
+                            <label>이메일</label>
+                            <conCon>
+                                <blank>{{ form.email }}</blank>
+                            </conCon>
+                        </tableLine>
+
+                        <tableLine>
+                            <label>사용자 이름</label>
+                            <conCon>
+                                <blank id="nameBlank">{{ form.username }}</blank>
+                                <comment id="nameComment">150자 이하 문자, 숫자 그리고 @/./+/-/_만 가능합니다.</comment>
+                            </conCon>
+                        </tableLine>
+
+                        <tableLine>
+                            <label>성별</label>
+                            <conCon>
+                                <blank>
+                                <select name="sex" required="" id="id_sex">
+                                      <option value="" selected="">선택해주세요!</option>
+                                      <option value="f">여성</option>
+                                      <option value="m">남성</option>
+                                </select>
+                                </blank>
+                            </conCon>
+
+                        </tableLine>
+
+                        <tableLine>
+                            <label>성</label>
+                            <conCon>
+                                <blank>{{ form.last_name }}</blank>
+                            </conCon>
+                        </tableLine>
+
+                        <tableLine>
+                            <label>이름</label>
+                            <conCon>
+                                <blank>{{ form.first_name }}</blank>
+                            </conCon>
+                        </tableLine>
+
+                        <tableLine>
+                            <label>비밀번호</label>
+                            <conCon id="sconCon">
+                                <blank>{{ form.password1 }}</blank>
+                                <commentCon>
+                                    <comment>
+                                        1. 다른 개인 정보와 유사한 비밀번호는 사용할 수 없습니다.
+                                    </comment>
+                                    <comment>
+                                        2. 비밀번호는 최소 8자 이상이어야 합니다.
+                                    </comment>
+                                    <comment>
+                                        3. 통상적으로 자주 사용되는 비밀번호는 사용할 수 없습니다.
+                                    </comment>
+                                    <comment>
+                                        4. 숫자로만 이루어진 비밀번호는 사용할 수 없습니다.
+                                    </comment>
+                                </commentCon>
+                            </conCon>
+                        </tableLine>
+
+                        <tableLine>
+                            <label>비밀번호 확인</label>
+                            <conCon>
+                                <blank>{{ form.password2 }}</blank>
+                                <comment>
+                                    확인을 위해 이전과 동일한 비밀번호를 입력하세요.
+                                </comment>
+                            </conCon>
+                        </tableLine>
+                        <tableLine>
+                            <label>프로필 소개</label>
+                            <conCon>
+                                <textarea
+                                    placeholder="자신을 소개해보세요!"
+                                    name="info"
+                                    cols="90"
+                                    rows="5"
+                                    id="id_info"></textarea>
+                            </conCon>
+{#                            <blank id="field">{{ form.info }}</blank>#}
+                        </tableLine>
+                    </table>
+                    <ButtonCon>
+                        <input id="button" type="submit" value="가입하기">
+                    </ButtonCon>
+                </form>
+            </formCon>
+    </container>
+{% endblock%}

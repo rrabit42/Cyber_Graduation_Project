@@ -1,0 +1,6 @@
+{% autoescape off %}
+    안녕하세요, {{ user.username }}님!
+
+    원활한 사이트 이용을 위해 아래 url을 통해 이메일 인증을 완료해 주세요!
+    {{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

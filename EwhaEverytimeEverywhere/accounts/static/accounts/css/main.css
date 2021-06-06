@@ -1,0 +1,72 @@
+/*모든 css파일에 다 붙여야 함*/
+.footer {
+    margin: auto 0 0;
+    padding-top: 13px;
+    height: 56px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { display: none; }
+
+h1 {
+    color: black !important;
+    font-size: 100px;
+    text-align: center;
+    padding: 30px;
+}
+/*여기까지*/
+
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+     font-family: 'NIXGONM-Vb';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+con {
+    /*margin-top: 50px;*/
+}
+
+h2 {
+    font-family: 'NIXGONM-Vb';
+    text-align: center;
+}
+
+#name {
+    font-size: 24px;
+    color: rgba(0,0,0,0.5);
+}
+
+img {
+    width: 180px;
+    height: auto;
+}
+
+#h {
+    filter: brightness(105%);
+}
+
+icon {
+    text-align: center;
+}

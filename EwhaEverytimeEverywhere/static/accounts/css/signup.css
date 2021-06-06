@@ -1,0 +1,185 @@
+/*모든 css파일에 다 붙여야 함*/
+.footer {
+    margin: auto 0 0;
+    padding-top: 13px;
+    height: 56px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { display: none; }
+
+h1 {
+    color: black !important;
+    font-size: 100px;
+    text-align: center;
+    padding: 30px;
+}
+/*여기까지*/
+
+container {
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+@font-face {
+     font-family: 'NIXGONM-Vb';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 50px;
+    font-family: 'NIXGONM-Vb';
+}
+
+formCon {
+    display: flex;
+    flex-direction: column;
+    /*width: 400px;*/
+    /*height: 200px;*/
+    margin: 0px auto;
+    /*position: relative;*/
+    /*border:10px solid lightgray;*/
+    position: relative;
+}
+
+table {
+    width: 800px;
+    /*height: 50px;*/
+    /*margin: 30px auto 50px auto;*/
+    margin-left: 50px;
+    /*padding: 10px;*/
+    display: flex;
+    flex-direction: column;
+}
+
+tableLine {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 20px 0;
+}
+
+label {
+    width: 200px;
+    font-family: 'NIXGONM-Vb';
+    font-size: 15px;
+}
+
+#id_sex {
+    font-family: 'NIXGONM-Vb';
+    height: 32px;
+}
+
+blank {
+    margin-right: 50px;
+}
+
+commentCon {
+    display: flex;
+    flex-direction: column;
+}
+
+comment {
+    width: 500px;
+    color: gray;
+    font-family: 'NIXGONM-Vb';
+    font-size: 15px;
+}
+
+#field {
+    width: 500px;
+    height: 200px;
+    font-size: 20px;
+}
+
+#button {
+    /*font-size: 100px;*/
+    margin: 40px auto 100px auto;
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: rgba(0,123,255,0.5);
+    color: white;
+    font-size: 20px;
+    font-family: 'SDSamliphopangche_Basic';
+    font-size: 24px;
+    border-radius: 15px;
+}
+
+#button:focus {
+    background-color: rgba(0,123,255,1);
+    border: none;
+    outline: none;
+}
+
+blank input{
+    outline: none;
+    border: 3px solid rgba(0,0,0,0.1);
+    background-color: white;
+    border-spacing: 3px;
+    border-radius: 5%;
+}
+
+blank input:focus {
+    outline: none;
+    border: 3px solid rgba(0,0,0,0);
+    background-color: rgba(0,123,255,0.2);
+    color: black;
+    border-radius: 5%;
+    border-spacing: 3px;
+}
+
+textarea {
+    padding: 5px;
+    outline: none;
+    border: 3px solid rgba(0,0,0,0.1);
+    background-color: white;
+    border-spacing: 3px;
+    border-radius: 2%;
+    font-family: 'NIXGONM-Vb';
+    font-size: 15px;
+}
+
+textarea:focus {
+    padding: 5px;
+    outline: none;
+    border: 3px solid rgba(0,0,0,0);
+    background-color: rgba(0,123,255,0.2);
+    color: black;
+    border-radius: 2%;
+    border-spacing: 3px;
+}
+
+select {
+    width: 188px;
+    outline: none;
+    border: 3px solid rgba(0,0,0,0.1);
+    background-color: white;
+    border-spacing: 3px;
+    border-radius: 5%;
+}
+
+select:focus {
+    outline: none;
+    border: 3px solid rgba(0,0,0,0);
+    background-color: rgba(0,123,255,0.2);
+    color: black;
+    border-radius: 2%;
+    border-spacing: 3px;
+}

@@ -1,0 +1,125 @@
+/*모든 css파일에 다 붙여야 함*/
+.footer {
+    margin: auto 0 0;
+    padding-top: 13px;
+    height: 56px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { display: none; }
+
+h1 {
+    color: black !important;
+    font-size: 100px;
+    text-align: center;
+    padding: 30px;
+}
+/*여기까지*/
+
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+     font-family: 'NIXGONM-Vb';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+profileCon {
+    width: 800px;
+    height: 270px;
+    margin: 20px auto 0px auto;
+    margin-left: 100px;
+}
+
+hCon {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+h2_b {
+    font-weight: 550;
+    font-size: 60px;
+    font-family: 'NIXGONM-Vb';
+    color: rgba(0,0,0,0.8);
+}
+
+h2 {
+    margin-left: 10px;
+    margin-top: 30px;
+    font-size: 35px;
+    font-family: 'NIXGONM-Vb';
+    color: rgba(0,0,0,0.7);
+}
+
+menuCon {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    padding-top: 60px;
+    font-size: 20px;
+    height: 100px;
+}
+#p_edit {
+    width: 150px;
+    text-align: left;
+    /*margin-left: 50px;*/
+    font-family: 'SDSamliphopangche_Basic';
+    text-decoration: none;
+    position: absolute;
+    left: 100px;
+    bottom: 94px;
+}
+#p_change {
+    position: absolute;
+    right: 100px;
+    width: 150px;
+    bottom: 94px;
+    font-family: 'SDSamliphopangche_Basic';
+    text-decoration: none;
+}
+
+profileLine {
+    margin-left: 80px;
+    font-family: 'NIXGONM-Vb';
+    display: flex;
+    margin-bottom: 15px;
+    height: 30px;
+}
+
+h33 {
+    font-size: 30px;
+    width: 100px;
+    vertical-align: middle;
+    height: 30px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+
+}
+
+h3c {
+    font-size: 25px;
+    margin-left: 50px;
+    vertical-align: middle;
+    height: 30px;
+    color: rgba(0,0,0,0.8);
+}

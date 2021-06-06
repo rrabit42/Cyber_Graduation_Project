@@ -1,0 +1,120 @@
+{% load static %}
+
+<h1>
+{#    <a href="{% url "root" %}">#}
+{#        <eeecert>EEE CERT</eeecert>#}
+{#    </a>#}
+
+{#    <eeecert>#}
+{#        <a href=null>EEE CERT</a>#}
+{#    </eeecert>#}
+
+{#    <input type="button" value="EEE CERT">#}
+
+    <a class="nav-link" href="{% url "root" %}">
+        EEE CERT
+    </a>
+</h1>
+
+<ul class="nav nav-pills">
+    {% if user.is_authenticated %}
+        <li class="nav-item left-tab">
+            <a class="nav-link" href="{% url "profile" %}">{{ user }}</a>
+        </li>
+        <li class="nav-item left-tab">
+            <a class="nav-link" href="{% url "logout" %}" onclick="return confirm('Are you sure?');">로그아웃</a>
+        </li>
+    {% else %}
+        <li class="nav-item left-tab">
+            <a class="nav-link" href="{% url "signup" %}">회원가입</a>
+        </li>
+        <li class="nav-item left-tab">
+            <a class="nav-link" href="{% url "login" %}">로그인</a>
+        </li>
+    {% endif %}
+        <li class="nav-item left-tab">
+            <a class="nav-link" href="{% url 'board:post_list' %}">블로그</a>
+        </li>
+        {% if user.is_superuser %}
+            {% include "_modal.html" %}
+            <li class="nav-item right-tab">
+                <button type="button" class="btn btn-rounded btn-outline-primary" id="create-key">
+                    <span class="btn-icon-right"></span>
+                    <i class="fa fa-plus mr-2"></i>
+                    KEY 생성
+                </button>
+            </li>
+            <li class="nav-item right-tab-c">
+                <a class="nav-link" href="{% url 'graduate:certDetailView' %}">관리자전용</a>
+            </li>
+        {% elif user.is_authenticated%}
+            {% include "_modal.html" %}
+            <li class="nav-item right-tab">
+                <button type="button" class="btn btn-rounded btn-outline-primary" id="create-token">
+                    <span class="btn-icon-right"></span>
+                    <i class="fa fa-plus mr-2"></i>
+                    토큰 발급
+                </button>
+            </li>
+        {% endif %}
+</ul>
+
+<style type="text/css">
+    /* 네비 양쪽 정렬 */
+    @font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    eeecert {
+        text-decoration: none; !important;
+        text-color: black;
+    }
+
+    .nav-pills {
+        width: 100%;
+        display: inline-block;
+        padding-left: 30px;
+        font-family: 'SDSamliphopangche_Basic';
+        font-size: 20px;
+    }
+
+    .left-tab {
+        float: left;
+    }
+
+    .right-tab {
+        float: right;
+        margin-right: 50px;
+    }
+
+    .right-tab-c {
+        float: right;
+    }
+
+    h1 {
+    color: black !important;
+    font-size: 100px;
+    text-align: center;
+    padding: 30px;
+    font-family: 'SDSamliphopangche_Outline';
+    /*왜안먹히냐*/
+    text-decoration: none !important;
+}
+    h1:hover {
+    /*    !*왜안먹히냐*!*/
+       test-decoration: none !important;
+    }
+
+</style>
+
+<hr/>

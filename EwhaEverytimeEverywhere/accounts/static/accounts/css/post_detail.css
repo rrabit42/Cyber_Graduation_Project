@@ -1,0 +1,182 @@
+/*모든 css파일에 다 붙여야 함*/
+.footer {
+    margin: auto 0 0;
+    padding-top: 13px;
+    height: 56px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { display: none; }
+
+h1 {
+    color: black !important;
+    font-size: 100px;
+    text-align: center;
+    padding: 30px;
+}
+/*여기까지*/
+
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+     font-family: 'NIXGONM-Vb';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+.mt-4 {
+    font-size: 30px;
+    font-family: 'NIXGONM-Vb';
+    text-align: left;
+    /*width: 600px;*/
+    padding: 0px;
+    margin: 0px;
+}
+
+titleCon {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+
+.lead {
+    width: 100px;
+    margin-top: 24px;
+    text-align: right;
+}
+
+formCon {
+    display: flex;
+    flex-direction: column;
+    /*height: 200px;*/
+    margin: 0px auto;
+    /*position: relative;*/
+    /*border:10px solid lightgray;*/
+    position: relative;
+    width: 835px; !important;
+}
+
+.col-lg-88 {
+    margin: 0px;
+    padding: 0px;
+}
+
+time {
+    font-size: 15px;
+    font-family: 'NIXGONM-Vb';
+    position: absolute;
+    right: 0px;
+}
+postContent {;
+    font-size: 20px;
+    font-family: 'NIXGONM-Vb';
+    padding-bottom: 50px;
+}
+buttonCon {
+    display: flex;
+    margin-left: 715px;
+}
+#tt {
+    margin-left: 10px;
+    border: 2px solid rgba(0,123,255,0.5);
+    background-color: white;
+    color: rgba(0,123,255,0.5);
+    font-family: 'SDSamliphopangche_Basic';
+    font-size: 20px;
+    font-weight: lighter;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+#tt:focus {
+    background-color: rgba(0,123,255,0.5);
+    color: white;
+    border: 2px solid rgba(0,123,255,0.5);
+    outline: none;
+    text-decoration: none;
+}
+
+.card {
+    font-family: 'NIXGONM-Vb';
+}
+
+.form-group label {
+    color: white;
+    font-size: 1px;
+    margin: 0px;
+    padding: 0px;
+    height: 1px;
+}
+
+
+#this-form-group {
+    margin: 0px;
+    padding: 0px;
+    width: 700px;
+}
+
+.card-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#submitB {
+    width: 80px;
+    height: 110px;
+    margin: 24px 0px 0px 13px;
+    border: none;
+    background-color: rgba(0,123,255,0.2);
+    color:  rgba(0,123,255,0.5);
+    font-family: 'SDSamliphopangche_Basic';
+    font-size: 20px;
+    font-weight: lighter;
+    border-radius: 10px;
+    text-decoration: none;
+    outline: none;
+}
+
+#submitB:focus {
+    background-color: rgba(0,123,255,0.4);
+    color: white;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+#comCon {
+    display: flex;
+}
+
+nameTime {
+    display: flex;
+}
+
+#WN {
+    font-size: 25px;
+}
+
+#smallT {
+    margin: 2px 0px 0px auto;
+    color: rgba(0,0,0,0.7);
+}

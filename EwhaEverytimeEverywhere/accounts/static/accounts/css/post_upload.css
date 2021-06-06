@@ -1,0 +1,113 @@
+/*모든 css파일에 다 붙여야 함*/
+.footer {
+    margin: auto 0 0;
+    padding-top: 13px;
+    height: 56px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { display: none; }
+
+h1 {
+    color: black !important;
+    font-size: 100px;
+    text-align: center;
+    padding: 30px;
+}
+/*여기까지*/
+
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+     font-family: 'NIXGONM-Vb';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+/*con {*/
+/*    !*margin-top: 50px;*!*/
+/*    margin-left: 50px;*/
+/*}*/
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-family: 'NIXGONM-Vb';
+    margin-left: 50px;
+}
+
+formCon {
+    display: flex;
+    flex-direction: column;
+    /*height: 200px;*/
+    margin: 0px auto;
+    /*position: relative;*/
+    /*border:10px solid lightgray;*/
+    position: relative;
+    width: 835px; !important;
+}
+
+#form {
+    width: 835px; !important;
+    margin: 0px auto;
+}
+
+#id_title {
+    width: 835px; !important;
+    /*margin-bottom: 15px;*/
+}
+
+#id_title::placeholder {
+    font-family: 'NIXGONM-Vb';
+    font-size: 15px;
+}
+
+#button {
+    margin: 15px 0px 50px 735px;
+    width: 100px;
+    height: 40px;
+    border: 2px solid rgba(0,123,255,0.5);
+    background-color: white;
+    color: rgba(0,123,255,0.5);
+    font-family: 'SDSamliphopangche_Basic';
+    font-size: 24px;
+    font-weight: lighter;
+    border-radius: 10px;
+}
+
+#button:focus {
+    background-color: rgba(0,123,255,0.5);
+    color: white;
+    border: 2px solid rgba(0,123,255,0.5);
+    outline: none;
+}
+
+label {
+    color: white;
+    font-size: 1px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
