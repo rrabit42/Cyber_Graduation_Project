@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -20,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'wr%!e-xm-2xsb2-)8#u83a)2ln&ehz%&%ltw^*g77w8)sri6s+'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django', 'localhost', 'localhost:8000', '127.0.0.1', '127.0.0.1:8000']
 
 
 # Application definition
@@ -37,6 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 'bootstrap_modal_forms',
+    # 'sslserver',
+    'widget_tweaks',
+    'rest_framework',
+    'django_celery_beat',
+    'django_celery_results',
+    'ckeditor',
+    'ckeditor_uploader',
+    'django_filters',
+
 ]
 
 MIDDLEWARE = [
@@ -54,7 +66,9 @@ ROOT_URLCONF = 'EwhaEverytimeEverywhere.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'EwhaEverytimeEverywhere', 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,9 +88,23 @@ WSGI_APPLICATION = 'EwhaEverytimeEverywhere.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'GRADUATE',
+        'USER': os.environ.get('DB_USERNAME', ''),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'HOST': os.environ.get('DB_HOST', ''),
+        'PORT': os.environ.get('DB_PORT', ''),
+        'OPTIONS': {
+            'init_command':
+                'SET default_storage_engine=INNODB,'
+                'character_set_connection=utf8,'
+                'collation_connection=utf8_unicode_ci'
+        }
     }
 }
 
@@ -103,9 +131,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'  #현재 시스템에 대한 디폴트 언어 설정 (사용자마다 다르게 적용 가능)
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -118,3 +146,106 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'), #경로를 합해주는 함수
+# ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+from django.urls import reverse_lazy
+
+# LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('profile')
+# LOGOUT_REDIRECT_URL = reverse_lazy('login')
+
+AUTH_USER_MODEL = 'accounts.User'
+
+# EMAIL
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # 개발 확인 용
+# 실제 배포할 때는
+# BACKEND SMTP로 바꾸고
+# HOST, HOS_USER, HOST_PASSWORD, USE_TLS, USE_SSL 설정까지 해줘야함
+EMAIL_HOST = 'smtp.gmail.com'
+# 메일을 호스트하는 서버
+EMAIL_PORT = '587'
+# gmail과의 통신하는 포트
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+# 발신할 이메일
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+# 발신할 메일의 비밀번호
+EMAIL_USE_TLS = True
+# TLS 보안 방법
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# 사이트와 관련한 자동응답을 받을 이메일 주소,'webmaster@localhost'
+
+
+# 암호 변경 토큰 유효 날짜(일)
+PASSWORD_RESET_TIMEOUT_DAYS = 1
+
+# DRF settings
+REST_FRAMEWORK = {
+    # C:\Anaconda3\lib\site-packages\rest_framework\pagination.py:200: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class '
+    # graduate.models.certPage'> QuerySet.
+    #   paginator = self.django_paginator_class(queryset, page_size)
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 10,
+
+    # 걍 발급, 인증 포맷 사용하는거지 서버에 jwt 사용하는것 X
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # )
+}
+
+# jwt 유효기간
+from datetime import timedelta
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
+    'REFRESH_TOKEN_LIFETIME': timedelta(minutes=11),
+    'ROTATE_REFRESH_TOKENS': True,
+}
+
+# # 세션쿠키 보안 적용=> cookie is only sent under an HTTPS connection
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_AGE = 600    # 초 단위 10분
+SESSION_SAVE_EVERY_REQUEST = True # 사용자가 리퀘스트를 서버로 날릴 때마다 서버의 세션 정보와 클라이언트의 세션 정보를 갱신할 것=true
+
+# CSRF쿠키 보안 적용
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_AGE = 600       # 초 단위, 10분
+
+# http를 https로 강제 redirect
+SECURE_SSL_REDIRECT = False
+# SECURE_TLS_REDIRECT = True
+
+# Celery 설정
+CELERY_ALWAYS_EAGER = True
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+# CELERY_RESULT_BACKEND = 'django-db'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Seoul'
+# CELERY_IMPORTS = [
+#     'accounts.tasks',
+# ]
+
+# SCHEDULE_MINUTE = 60
+# SCHEDULE_HOUR = 60 * SCHEDULE_MINUTE
+# SCHEDULE_DAY = 24 * SCHEDULE_HOUR
+# SCHEDULE_WEEK = 7 * SCHEDULE_DAY
+# SCHEDULE_MONTH = 30 * SCHEDULE_DAY
+# CELERY_BEAT_SCHEDULE = {
+#    'ga_collect': {
+#         'task': 'app.tasks.ga_collect',
+#         'schedule': 5 * SCHEDULE_MINUTE,
+#         # 'schedule': 2.0,
+#         # 'args': (4, 4)
+#     }
+# }
+
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
