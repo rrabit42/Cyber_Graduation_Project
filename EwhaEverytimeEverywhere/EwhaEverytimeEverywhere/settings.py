@@ -187,7 +187,7 @@ PASSWORD_RESET_TIMEOUT_DAYS = 1
 # DRF settings
 REST_FRAMEWORK = {
     # C:\Anaconda3\lib\site-packages\rest_framework\pagination.py:200: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class '
-    # graduate.models.certPage'> QuerySet.
+    # manager.models.certPage'> QuerySet.
     #   paginator = self.django_paginator_class(queryset, page_size)
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     # 'PAGE_SIZE': 10,
