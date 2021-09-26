@@ -1,0 +1,3 @@
+time,memory | committed bytes in use,memory | available MBytes,process total | processor time,process total | private bytes,process total | working set,processor information total | processor time,processor information total | processor utility
+2021 9 21 20 24 57',48.6,8650969088,94661.92188,16837517312,8186548224,55808.5,10.2
+2021 9 21 20 25 12',48.6,8647393280,94669.03125,16837517312,8190124032,55812.125,6.4
