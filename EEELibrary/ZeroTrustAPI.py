@@ -84,7 +84,7 @@ class User:
         self.idle_r_threshold = user['idle_r_threshold'][0]
         self.idle_r_tolerance = user['idle_r_tolerance'][0]
 
-class Control:
+class ZTControlServer:
     # feature file labeling 수정
     def modify_label(filename, type, label):
         if(type == 'mouse'):
@@ -174,4 +174,54 @@ class Control:
                     return sendData
                     # res = self.alert_to_CERT(sendData)    
         return None
+
+    # 사용자 기기 정보
+    def deviceInfo(self):
+        # 네트워크 정보
+        mac_addr = getmac.get_mac_address()
+        host_name = socket.gethostname()
+        # 내부 ip 주소
+        inner_ip_addr = socket.gethostbyname(host_name)
+        outer_ip_addr = socket.gethostbyname(socket.getfqdn())
+        # for interface, addr_list in psutil.net_if_addrs().items():
+        #     pass
+
+        # Configuration 상태
+        os_name = platform.system()
+        os_version = platform.version()
+        process_info = platform.processor()
+        process_architecture = platform.machine()
+        ram_size = round(psutil.virtual_memory().total / (1024.0 **3))
+
+        device_data = {
+            "mac_addr": mac_addr,
+            "host_name": host_name,
+            "inner_ip_addr": inner_ip_addr,
+            "outer_ip_addr": outer_ip_addr,
+            "os_name": os_name,
+            "os_version": os_version,
+            "process_info": process_info,
+            "process_architecture": process_architecture,
+            "ram_size": ram_size
+        }
+        return device_data
+
+    # 정적 정보 확인 및 계정 차단
+    def check_static_info(self, from_url, user, stored_info):
+        # 해당 user로 저장된 device 정보를 DB에서 불러오기
+        # stored_info = None
+
+        # 현재 접속한 사용자의 정적 정보 가져오기
+        device_info = self.deviceInfo()
+
+        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        alert_data = json.dumps({"Authentication": (device_info == stored_info)}) # 일치, 불일치 여부
+        response = requests.post(from_url, data=alert_data, verify=False, headers=headers)
+        return response
+    
+    # 사용자 계정 상태 확인 및 처리 -> 회사 user모델에 따라 차단 여부 확인
+    def check_account_status(self, user):
+        raise NotImplementedError()
+
+        
                 
