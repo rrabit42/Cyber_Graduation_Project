@@ -8,6 +8,15 @@ import datetime
 import json
 import requests
 import joblib
+import psutil
+import getmac
+import socket
+import platform
+import requests
+import schedule
+import datetime
+import time
+import jwt
 
 class AI:
     # user(user's name), type(mouse or resource)
